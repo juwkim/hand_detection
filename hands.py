@@ -100,71 +100,69 @@ def draw_landmarks(image, landmark_array, line_thickness = 1, vertex_radius = 2,
     cv2.line(image, landmark_array[17], landmark_array[0], (0, 0, 0), line_thickness * 2)
     cv2.line(image, landmark_array[17], landmark_array[0], (255, 255, 255), line_thickness)
 
-    # Key Points
-    for index, landmark in enumerate(landmark_array):
-        if index == 0:  # 手首1
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 1:  # 手首2
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 2:  # 親指：付け根
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 3:  # 親指：第1関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 4:  # 親指：指先
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (0, 0, 0), 1)
-        if index == 5:  # 人差指：付け根
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 6:  # 人差指：第2関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 7:  # 人差指：第1関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 8:  # 人差指：指先
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (0, 0, 0), 1)
-        if index == 9:  # 中指：付け根
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 10:  # 中指：第2関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 11:  # 中指：第1関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 12:  # 中指：指先
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (0, 0, 0), 1)
-        if index == 13:  # 薬指：付け根
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 14:  # 薬指：第2関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 15:  # 薬指：第1関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 16:  # 薬指：指先
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (0, 0, 0), 1)
-        if index == 17:  # 小指：付け根
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 18:  # 小指：第2関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 19:  # 小指：第1関節
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), vertex_radius, (0, 0, 0), 1)
-        if index == 20:  # 小指：指先
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (255, 255, 255), -1)
-            cv2.circle(image, (landmark[0], landmark[1]), fingertip_point_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[0], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[0], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[1], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[1], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[2], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[2], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[3], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[3], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[4], fingertip_point_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[4], fingertip_point_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[5], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[5], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[6], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[6], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[7], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[7], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[8], fingertip_point_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[8], fingertip_point_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[9], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[9], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[10], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[10], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[11], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[11], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[12], fingertip_point_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[12], fingertip_point_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[13], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[13], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[14], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[14], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[15], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[15], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[16], fingertip_point_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[16], fingertip_point_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[17], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[17], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[18], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[18], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[19], vertex_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[19], vertex_radius, (0, 0, 0), 1)
+
+    cv2.circle(image, landmark_array[20], fingertip_point_radius, (255, 255, 255), -1)
+    cv2.circle(image, landmark_array[20], fingertip_point_radius, (0, 0, 0), 1)
 
 def draw_rectangle(image, p1, p2):
     cv2.rectangle(image, (p1.x - Config.box_margin, p1.y - Config.box_margin), (p2.x + Config.box_margin, p2.y + Config.box_margin), color=(0, 0, 0), thickness=1)
